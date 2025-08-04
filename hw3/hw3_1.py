@@ -10,10 +10,11 @@ class Bike:
     
 # Создаем объекты класса Bike
 bike1 = Bike("Cube", "синий")
-bike2 = Bike("Specialized", "красный") # type: ignore
+bike2 = Bike("Specialized", "красный")
 bike3 = Bike("Trek", "белый")
 
 #выводим информацию о великах
 bike1.bike_info()
 bike2.bike_info()
+
 bike3.bike_info()
