@@ -1,5 +1,5 @@
 
-# Создайте базовый класс Employee с атрибутами name, salary (защищённый) и методом display_info().
+# Создайте базовый класс Employee с атрибутами name, salary (приватный) и методом display_info().
 # От него унаследуйте Manager (добавляет атрибут department) и Developer (добавляет programming_language).
 # Сделайте так, чтобы salary нельзя было изменить напрямую, но можно было через метод set_salary(), который проверяет, что зарплата не меньше 0.
 
@@ -8,15 +8,18 @@ class Employee():
 
     def __init__(self, name, salary):
         self.name = name
-        self._salary = salary
+        self.__salary = salary
     
     def display_info(self):
         print(f"Сотрудник: {self.name}")
-        print(f"Зарплата: {self._salary} рублей.")
+        print(f"Зарплата: {self.__salary} рублей.")
+
+    def get_salary(self):
+        return self.__salary
 
     def set_salary(self, new_salary):
         if new_salary > 0:
-            self._salary = new_salary
+            self.__salary = new_salary
         else:
             raise ValueError("Зарплата не может быть отрицательной!")
 
